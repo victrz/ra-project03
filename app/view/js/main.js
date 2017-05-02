@@ -1,10 +1,29 @@
 //document ready function
 $(document).ready(function(){
 // // Carousel starts here
-  $('.main-carousel').flickity({
-    cellAlign: 'center',
-    contain: true
-  });
+//  $(".owl-carousel").owlCarousel({
+//    loop:true,
+//     margin:10,
+//     nav:true,
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:3
+//         },
+//         1000:{
+//             items:5
+//         }
+//     }
+// })
+
+$('.main-carousel').flickity({
+  // options
+  cellAlign: 'center',
+  contain: true
+});
+ });
 // // Smooth Scrolling starts here
 	$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
@@ -16,7 +35,6 @@ $(document).ready(function(){
 	        window.location.hash = target;
 	    });
 	});
-});
 // //email validation starts here
 function ValidateEmail(inputText){
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;

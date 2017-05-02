@@ -1,6 +1,7 @@
-//var selectedCategory;
-//var url="https://api.nytimes.com/svc/topstories/v2/home";
-//var x=0;
+//GETTING PRODUCTS FROM BEST BUY API
+//
+//
+//
 
 $(document).ready(function(){
             var xhr = new XMLHttpRequest();
@@ -17,22 +18,36 @@ $(document).ready(function(){
               }
             }
 });
-function newProduct(description, name, image, salePrice, manufacturer, url){
+function newProduct(description, name, image, salePrice, manufacturer, url, sku){
           var productClone = $("#clone").clone();
-          //$(productClone).children(".article-wrap").css({"background": "url('"+image+"')", "background-size": "cover", "background-position": "center"});
+          console.log($("hellooo"));
           $(productClone).find("h1").text(name);
-          $(productClone).find("h2").text(manufacturer);
-          $(productClone).find("h2").text(salePrice);
+          $(productClone).find("h3").text(manufacturer);
+          $(productClone).find("h2").text("$"+salePrice);
           $(productClone).find("img").attr({"src": image, width: 300});
           $(productClone).find("a").attr("href", url);
+          console.log($("#appendHere"));
           $("#appendHere").append($(productClone).html());
+          //.flickity-slider
 }
 function loop_products(products){
   x=0;
   for (var i=0; i < products.length; i++){
-    newProduct(products[i].description, products[i].name, products[i].image, products[i].salePrice, products[i].manufacturer, products[i].url);
+    newProduct(products[i].description, products[i].name, products[i].image, products[i].salePrice, products[i].manufacturer, products[i].url, products[i].sku);
     x++;
     console.log(x);
     console.log(products[i].name)
   }
 }
+
+// class Product(description, name, image, salePrice, manufacturer, url, sku){
+//   this.prodDescription: description;
+//   this.prodSKU: sku;
+//   this.prodName: name;
+//   this.prodImage: image;
+//   this.prodSalePrice: salePrice;
+//   this.prodManufacturer: manufacturer;
+//   this.prodURL: url;
+// }
+//
+// neo = new Person("Neo",25,1.81)
