@@ -1,5 +1,5 @@
 # ra-project03
-buy things from best buy
+initial tests for Project 3 ---> for final version got to ra-project03b
 
 Sunday, April 30
 -most css styling complete,
